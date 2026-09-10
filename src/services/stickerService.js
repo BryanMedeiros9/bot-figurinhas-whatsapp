@@ -13,8 +13,8 @@ async function convertImageToSticker(imageBuffer) {
 
   const stickerBuffer = await sharp(imageBuffer)
     .resize(512, 512, {
-      fit: 'contain',
-      background: { r: 0, g: 0, b: 0, alpha: 0 } // fundo transparente
+      fit: 'cover',
+      position: 'centre'
     })
     .webp({ quality: 80 })
     .toBuffer()
