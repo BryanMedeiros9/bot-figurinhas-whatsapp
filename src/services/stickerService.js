@@ -1,13 +1,7 @@
 const sharp = require('sharp')
 const logger = require('../utils/logger')
 
-// RF02: converte um buffer de imagem (jpg/png/qualquer formato suportado
-// pelo sharp) em um buffer webp compatível com figurinha de WhatsApp.
-//
-// Regras do WhatsApp pra figurinha estática:
-// - formato webp
-// - proporção 1:1 (quadrada) — por isso o 'fit: contain' com fundo transparente
-// - tamanho recomendado: 512x512
+
 async function convertImageToSticker(imageBuffer) {
   const startedAt = Date.now()
 
